@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/compactcalendar_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.github.sundeepk.compactcalendarview.CompactCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/compactcalendar_view"
+        android:layout_width="fill_parent"
+        android:layout_height="199dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="480dp"
+        android:elevation="2dp"
+        app:compactCalendarBackgroundColor="#005005"
+        app:compactCalendarCurrentDayBackgroundColor="#60ad5e"
+        app:compactCalendarCurrentDayIndicatorStyle="fill_large_indicator"
+        app:compactCalendarCurrentSelectedDayBackgroundColor="#60ad5e"
+        app:compactCalendarEventIndicatorStyle="small_indicator"
+        app:compactCalendarOtherMonthDaysTextColor="#534c4c"
+        app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="true"
+        app:compactCalendarTargetHeight="210dp"
+        app:compactCalendarTextColor="#ffffff"
+        app:compactCalendarTextSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/floatingActionMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabMode"
+        style="@style/MyCustomTabLayout"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/compactcalendar_view">
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabMode">
+
+    </android.support.v4.view.ViewPager>
+    <!--<Button-->
+        <!--android:id="@+id/buttonForList"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="2dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginBottom="7dp"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/_dynamic"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/guideline10"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/compactcalendar_view" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/button4"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="2dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginBottom="7dp"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/_dynamic"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/guideline10"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/compactcalendar_view" />-->
+
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/_dynamic"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:background="#60ad5e"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/buttonForList">-->
+
+
+    <!--</android.support.v7.widget.RecyclerView>-->
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/floatingActionMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:menu_colorNormal="#6d4c41"
+        app:menu_icon="@drawable/baseline_menu_white_18dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="10dp">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menuItem1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="alertAdd"
+            android:src="@drawable/baseline_add_white_18dp"
+            app:fab_colorNormal="#795548"
+            app:fab_label="Add new member"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menuItem2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="alertDelete"
+            android:src="@drawable/round_assistant_photo_white_18dp"
+            app:fab_colorNormal="#795548"
+            app:fab_label="Statistics"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menuItem3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="allAccountsButton"
+            android:src="@drawable/baseline_people_white_18dp"
+            app:fab_colorNormal="#795548"
+            app:fab_label="All members"
+            app:fab_size="mini" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
+
+
+</android.support.constraint.ConstraintLayout>
